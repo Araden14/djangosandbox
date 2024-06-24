@@ -1,0 +1,72 @@
+<!-- main/templates/main/article_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #666;
+        }
+        p {
+            color: #555;
+        }
+        .article-meta {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #999;
+        }
+        .abstract {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ article.name }}</h1>
+        <div class="article-meta">
+            <p>By {{ article.author }} | Published on {{ article.publication_date|date:"F j, Y, g:i a" }}</p>
+            <p>Topic: {{ article.topic }}</p>
+        </div>
+        <p class="abstract">{{ article.abstract }}</p>
+        <p>{{ article.content }}</p>
+        <a href="{% url 'article_list' %}" class="back-link">Back to list</a>
+    </div>
+</body>
+</html>

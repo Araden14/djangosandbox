@@ -1,0 +1,90 @@
+<!-- main/templates/main/article_list.html -->
+
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Article List" %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #666;
+        }
+        p {
+            color: #555;
+        }
+        .article-item {
+            display: flex; /* Add flex display */
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .article-item a {
+            text-decoration: none;
+            color: #333;
+        }
+        .article-item a:hover {
+            color: #555;
+        }
+        .abstract {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .thumbnail {
+            height: 30vh;
+            object-fit: cover;
+            width:auto;
+            flex: 1; /* Add flex property */
+            margin-right: 10px; /* Add margin for spacing */
+        }
+        .content {
+            padding-left:5%;
+            flex: 2; /* Add flex property */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>{% trans "Article List" %}</h1>
+        <div>
+            {% for article in articles %}
+                <div class="article-item">
+                    {% if article.thumbnail %}
+                    <img class="thumbnail" src="{{ article.thumbnail.url }}" alt="Thumbnail">
+                {% endif %}
+                    <div class="content">
+                        <h2><a href="{% url 'article' article.slug %}">{{ article.name }}</a></h2>
+                        <p class="abstract">{{ article.abstract }}</p>
+                        <p>{{ article.publication_date|date:"F j, Y, g:i a" }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p>{% trans "No articles available." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
