@@ -1,0 +1,16 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "main/migrations": true,
+        "main/__pycache__": true,
+        ".vscode": true,
+        "main/__init__.py": true,
+        "main/apps.py": true,
+        "db.sqlite3": true
+    }
+}

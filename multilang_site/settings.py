@@ -58,7 +58,7 @@ ROOT_URLCONF = 'multilang_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'main/templates/main'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

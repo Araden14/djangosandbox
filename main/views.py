@@ -9,6 +9,3 @@ def article_list(request):
 def article(request, slug):  
     article = get_object_or_404(Article, slug=slug)
     return render(request, 'main/article.html', {'article': article})
-
-def base(request):
-    return render(request, 'main/base.html')
