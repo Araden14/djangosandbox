@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404  # Import the get_object_or_404 function
 from .models import Article
+from django.http import HttpResponseRedirect
+from django.conf import settings
+from django.utils import translation
 
 
 def article_list(request):

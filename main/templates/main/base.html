@@ -3,18 +3,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My App{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
     <header>
-        <div class="container2">
-            <h1>My App</h1>
-         
-
+        <div class="headerbox">
+            <div class="headerchild">
+                <div class="headertitle">
+                    <img class="logo" src="{% static 'images/diotsiaci.png' %}" alt="Logo">
+                    <h1>Django Sandbox</h1>
+                    <div class="nav">
+                        <a>LLM chat</a>
+                    </div>
+                </div>
+                <div class="language">
+                    <a href="/fr/main">FR</a>
+                    <a href="/en/main">EN</a>
+                </div>
+            </div>
         </div>
     </header>
     <main>
@@ -24,4 +36,5 @@
         <p>&copy; 2024 My App. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

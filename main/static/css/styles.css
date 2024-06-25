@@ -1,5 +1,6 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -7,49 +8,126 @@ body {
     color: #333;
 }
 
+/* Logo */
+.logo {
+    height: 10vh;
+}
+
+/* Container */
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    margin-top: 20px;
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Header Box */
+.headerbox {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Child */
+.headerchild {
+    width: 80%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav > a {
+    background-color:navy;
+    color:white;
+    padding:1em;
+    border-radius:15px;
+}
+
+/* Headings */
 h1 {
     color: #333;
 }
+
 h2 {
     color: #666;
 }
+
+/* Paragraphs */
 p {
     color: #555;
 }
+
+/* Container Heading */
+.container > h1 {
+    margin-left: 20px;
+}
+
+/* Article Item */
 .article-item {
-    display: flex; /* Add flex display */
+    display: flex;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
+
 .article-item a {
     text-decoration: none;
     color: #333;
 }
+
 .article-item a:hover {
     color: #555;
 }
+
+/* Abstract */
 .abstract {
     font-style: italic;
     color: #666;
     margin-bottom: 10px;
 }
+
+/* Thumbnail */
 .thumbnail {
     height: 30vh;
     object-fit: cover;
-    width:auto;
-    flex: 1; /* Add flex property */
-    margin-right: 10px; /* Add margin for spacing */
+    width: auto;
+    flex: 1;
+    margin-right: 10px;
 }
+
+/* Content */
 .content {
-    padding-left:5%;
-    flex: 2; /* Add flex property */
+    padding-left: 5%;
+    flex: 2;
+}
+
+/* Language */
+.language {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+}
+
+/* Header Title */
+.headertitle {
+    display: flex;
+    gap: 3em;
 }
