@@ -1,4 +1,5 @@
 24.06.2024
+<<<<<<< HEAD
 bilan session 23.06
 
 Used copilot to adapt html templates to i18n translation
@@ -13,3 +14,7 @@ total time : 3h
 1h
 25.06.2024 à 23h
 46m
+=======
+1h10
+8h
+>>>>>>> 11716f587f3e118a1e24c94ac7defa259e2116e2
