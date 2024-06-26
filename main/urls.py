@@ -7,6 +7,7 @@ urlpatterns = [
 
     path('', views.article_list, name='article_list'),
     path('article/<slug:slug>/', views.article, name='article'),
+    path('chat/', views.chat_view, name='chat_view'),
 
 
 ]
