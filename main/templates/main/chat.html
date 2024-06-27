@@ -1,4 +1,7 @@
 <!-- chatbot/templates/chatbot/chat.html -->
+{% extends 'base.html' %}
+{% block title %}Article{% endblock %}
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +11,7 @@
     <title>Chatbot</title>
 </head>
 <body>
+    <div class="container">
     <h1>Conversational AI</h1>
     <form method="post">
         {% csrf_token %}
@@ -18,5 +22,7 @@
         <h2>Response:</h2>
         <p>{{ response }}</p>
     {% endif %}
+</div>
 </body>
 </html>
+{% endblock %}

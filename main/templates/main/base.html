@@ -16,10 +16,10 @@
         <div class="headerbox">
             <div class="headerchild">
                 <div class="headertitle">
-                    <img class="logo" src="{% static 'images/diotsiaci.png' %}" alt="Logo">
+                    <a href="{% url 'article_list' %}"><img class="logo" src="{% static 'images/diotsiaci.png' %}" alt="Logo"></a>
                     <h1>Django Sandbox</h1>
                     <div class="nav">
-                        <a>LLM chat</a>
+                        <a href="{% url 'chat_view' %}">LLM chat</a>
                     </div>
                 </div>
                 <div class="language">
