@@ -1,0 +1,32 @@
+/* Input Field */
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    width:70%;
+}
+
+input:focus {
+    border-color: #666;
+}
+/* Buttons */
+button{
+    padding: 10px 20px;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: darkblue;
+}
+.chat-history {
+    height: 500px; /* Set a fixed height for the chat history */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}

@@ -18,3 +18,10 @@ class Article(models.Model):
 
     def __str__(self):
         return self.name
+class Conversation(models.Model):
+    user_input = models.TextField()
+    bot_response = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Conversation at {self.created_at}"

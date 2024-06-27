@@ -1,28 +1,40 @@
-<!-- chatbot/templates/chatbot/chat.html -->
+<!-- main/templates/main/chat.html -->
 {% extends 'base.html' %}
-{% block title %}Article{% endblock %}
+{% block title %}Chatbot{% endblock %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-</head>
-<body>
-    <div class="container">
+<style>
+   
+</style>
+
+<script>
+    function clearInput() {
+        document.getElementById("user-input").value = "";
+    }
+</script>
+
+<div class="container">
     <h1>Conversational AI</h1>
-    <form method="post">
+    
+    <div class="chat-history">
+        {% for entry in chat_history %}
+            <div class="user-input">
+                <strong>You:</strong> <p>{{ entry.user_input }}</p>
+            </div>
+            <div class="chat-response">
+                <strong>Bot:</strong> <p>{{ entry.chat_response|safe }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <form method="post" class="input-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Send</button>
+        <button type="submit" onclick="clearInput()">Send</button>
     </form>
-    {% if response %}
-        <h2>Response:</h2>
-        <p>{{ response }}</p>
+    
+    {% if error %}
+        <p class="error">{{ error }}</p>
     {% endif %}
 </div>
-</body>
-</html>
 {% endblock %}
