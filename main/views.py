@@ -7,7 +7,7 @@ from .forms import ChatForm
 import requests
 import cohere
 
-co = cohere.Client(api_key="AScLrfZBr499h5VMMXDtc7g8w42iQGHGn5UEhLKc")
+co = cohere.Client(api_key="")
 
 
 def article_list(request):
