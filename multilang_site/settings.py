@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',  # Add your app to the list of installed apps
+    'main',
+    'main.templatetags',
 ]
 
 MIDDLEWARE = [

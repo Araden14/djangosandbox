@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 20:03+0200\n"
+"POT-Creation-Date: 2024-06-28 21:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: .\templates\main\article_list.html:8 .\templates\main\article_list.html:25
+
+#: .\main\templates\main\article.html:24
+msgid "Topic"
+msgstr "Catégorie"
+
+#: .\main\templates\main\article.html:29
+msgid "Back to list"
+msgstr "Retour à la liste"
+
+#: .\main\templates\main\article_list.html:12
 msgid "Article List"
 msgstr "Liste des articles"
 
-#: .\templates\main\article_list.html:31
+#: .\main\templates\main\article_list.html:26
 msgid "No articles available."
 msgstr "Aucun article trouvé"
+
+#: .\main\templates\main\chat.html:20
+msgid "Conversational AI"
+msgstr "IA conversationnelle"
+
+#: .\main\templates\main\chat.html:25
+msgid "You"
+msgstr "Vous"
+
+#: .\main\templates\main\chat.html:37
+msgid "Send"
+msgstr "Envoyer"

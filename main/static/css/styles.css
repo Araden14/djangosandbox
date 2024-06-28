@@ -1,3 +1,71 @@
+/**
+ * 
+ * Global Styles:
+ * - Sets the font family, line height, margin, padding, background color, and text color for the body element.
+ * 
+ * Logo:
+ * - Sets the height for the logo element.
+ * 
+ * Container:
+ * - Sets the width, margin, overflow, margin top, padding, background color, and box shadow for the container element.
+ * 
+ * Header Box:
+ * - Sets the background color, display, justify content, box shadow, padding, and margin for the headerbox element.
+ * 
+ * Header Child:
+ * - Sets the width, margin, overflow, padding, background color, display, align items, and justify content for the headerchild element.
+ * 
+ * Navigation:
+ * - Sets the display, justify content, align items, background color, color, padding, and border radius for the nav element.
+ * 
+ * Headings:
+ * - Sets the color for the h1 and h2 elements.
+ * 
+ * Paragraphs:
+ * - Sets the color for the p element.
+ * 
+ * Container Heading:
+ * - Sets the margin left for the h1 element inside the container element.
+ * 
+ * Article Item:
+ * - Sets the display, margin bottom, padding bottom, and border bottom for the article-item element.
+ * 
+ * Abstract:
+ * - Sets the font style, color, and margin bottom for the abstract element.
+ * 
+ * Thumbnail:
+ * - Sets the width, height, object fit, flex, and margin right for the thumbnail element.
+ * 
+ * Content:
+ * - Sets the padding left and flex for the content element.
+ * 
+ * Language:
+ * - Sets the display, justify content, align items, and gap for the language element.
+ * 
+ * Header Title:
+ * - Sets the display and gap for the headertitle element.
+ * 
+ * Input Field:
+ * - Sets the padding, border, border radius, font size, outline, and width for the input element.
+ * 
+ * Buttons:
+ * - Sets the background color, color, border, border radius, font size, cursor, and height for the button element.
+ * 
+ * Chat History:
+ * - Sets the height and overflow-y for the chat-history element.
+ * 
+ * Input Form:
+ * - Sets the width, display, and align items for the input-form element.
+ * 
+ * Chat Response:
+ * - Sets the background color, margin, border radius, color, text align, width, display, justify content, padding, and flex direction for the chat-response element.
+ * 
+ * User Input:
+ * - Sets the background color, margin, border radius, text align, width, padding, display, and flex direction for the user-input element.
+ * 
+ * Response Box:
+ * - Sets the display, justify content, align items, and gap for the responsebox element.
+ */
 /* Global Styles */
 body {
     font-family: Roboto, sans-serif;
@@ -78,7 +146,11 @@ h2 {
 p {
     color: #555;
 }
+a{
+    color:navy;
+    text-decoration:none;
 
+}
 /* Container Heading */
 .container > h1 {
     margin-left: 20px;
@@ -90,12 +162,21 @@ p {
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
+    transition: transform 0.5s;
+
 }
 
 .article-item a {
     text-decoration: none;
     color: #333;
 }
+
+.article-item:hover {
+        
+        transform: scale(1.03);
+        transition: transform 0.5s;
+
+    }
 
 .article-item a:hover {
     color: #555;
@@ -110,11 +191,17 @@ p {
 
 /* Thumbnail */
 .thumbnail {
-    height: 30vh;
+    width: 10em;
+    height:20em;
     object-fit: cover;
-    width: auto;
     flex: 1;
     margin-right: 10px;
+}
+.thumbnailarticle
+{
+    width:100%;
+    height:40vh;
+    object-fit: cover;
 }
 
 /* Content */
@@ -143,6 +230,7 @@ input {
     border-radius: 5px;
     font-size: 16px;
     outline: none;
+    width:80%;
 }
 
 input:focus {
@@ -150,15 +238,71 @@ input:focus {
 }
 /* Buttons */
 button{
-    padding: 10px 20px;
     background-color: navy;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    height:2.5em;
+    
 }
 
 button:hover {
     background-color: darkblue;
+}
+.chat-history {
+    height: 500px; /* Set a fixed height for the chat history */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+.input-form p {
+flex-grow:7;}
+
+.input-form {
+    width:80%;
+display:flex;
+align-items: center;
+}
+.input-form button {
+    flex-grow:1;
+}
+.chat-response {
+    background-color: navy;
+    margin: 10px;
+    border-radius: 15px;
+    color: white;
+    text-align: right;
+    width:60%;
+    display:flex;
+    justify-content: flex-start; /* Position the box on the right */
+    padding:2em;
+    flex-direction: column;
+}
+.chat-response p {
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+.user-input {
+    background-color: #f4f4f4;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: left;
+    width:60%;
+    padding:1em 2em;
+    display:flex;
+    flex-direction: column;
+
+}
+.user-input p {
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+}
+.responsebox{
+    display:flex;
+    justify-content: right;
+    align-items: right;
+    gap: 1em;
 }

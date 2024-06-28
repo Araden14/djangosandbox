@@ -1,40 +1,70 @@
 <!-- main/templates/main/chat.html -->
+
 {% extends 'base.html' %}
-{% block title %}Chatbot{% endblock %}
+{% load i18n %}
+
+{% block title %}
+    Chatbot
+{% endblock %}
+
 {% block content %}
+    <!-- This block contains the HTML structure for the chat interface -->
+    <style>
+        /* CSS styles for the chat interface */
+    </style>
 
-<style>
-   
-</style>
+    <script>
+        // JavaScript functions for the chat interface
+        function clearInput() {
+            // Clears the user input field
+            document.getElementById("user-input").value = "";
+        }
+    </script>
 
-<script>
-    function clearInput() {
-        document.getElementById("user-input").value = "";
-    }
-</script>
+    <div class="container">
+        <h1>{% trans "Conversational AI" %}</h1>
 
-<div class="container">
-    <h1>Conversational AI</h1>
-    
-    <div class="chat-history">
-        {% for entry in chat_history %}
-            <div class="user-input">
-                <strong>You:</strong> <p>{{ entry.user_input }}</p>
-            </div>
-            <div class="chat-response">
-                <strong>Bot:</strong> <p>{{ entry.chat_response|safe }}</p>
-            </div>
-        {% endfor %}
+        <div id="chat-history" class="chat-history">
+            <!-- This loop iterates over the chat history and displays user inputs and chat responses -->
+            {% for entry in chat_history %}
+                <div class="user-input">
+                    <p><strong>{% trans "You" %}</strong>{{ entry.user_input }}</p>
+                </div>
+                <div class="responsebox">
+                    <div class="chat-response">
+                        <p><strong>DiotGPT</strong><br>{{ entry.chat_response|safe }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="inputbox">
+            <!-- This form allows users to input their messages -->
+            <form method="post" class="input-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" onclick="clearInput()">{% trans "Send" %}</button>
+            </form>
+        </div>
+
+        {% if error %}
+            <!-- Displays an error message if there is any -->
+            <p class="error">{{ error }}</p>
+        {% endif %}
     </div>
-    
-    <form method="post" class="input-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" onclick="clearInput()">Send</button>
-    </form>
-    
-    {% if error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
-</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Scroll to the bottom of the chat history when the page loads
+            var chatHistory = document.getElementById("chat-history");
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            // Scroll to the bottom of the chat history when a new message is sent
+            document.getElementById("chat-form").addEventListener("submit", function() {
+                setTimeout(function() {
+                    chatHistory.scrollTop = chatHistory.scrollHeight;
+                }, 100);  // Adjust the timeout as needed
+            });
+        });
+    </script>
 {% endblock %}

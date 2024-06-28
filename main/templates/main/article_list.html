@@ -2,26 +2,30 @@
 
 {% extends 'base.html' %}
 {% load i18n %}
-    {% block title %}Article List{% endblock %}
-    
-    {% block content %}
 
+{% block title %}
+    Article List
+{% endblock %}
 
+{% block content %}
+    <!-- This block contains the HTML code for displaying a list of articles. -->
 
     <div class="container">
         <h1>{% trans "Article List" %}</h1>
         <div>
             {% for article in articles %}
+            <a href="{% url 'article' article.slug %}">
                 <div class="article-item">
                     {% if article.thumbnail %}
-                    <img class="thumbnail" src="{{ article.thumbnail.url }}" alt="Thumbnail">
-                {% endif %}
+                        <img class="thumbnail" src="{{ article.thumbnail.url }}" alt="Thumbnail">
+                    {% endif %}
                     <div class="content">
-                        <h2><a href="{% url 'article' article.slug %}">{{ article.name }}</a></h2>
+                        <h2>{{ article.name }}</h2>
                         <p class="abstract">{{ article.abstract }}</p>
                         <p>{{ article.publication_date|date:"F j, Y, g:i a" }}</p>
                     </div>
                 </div>
+            </a>
             {% empty %}
                 <p>{% trans "No articles available." %}</p>
             {% endfor %}

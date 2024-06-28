@@ -1,5 +1,9 @@
 <!-- templates/base.html -->
+
+<!-- This is the base template for the main app in a Django project. It provides the basic structure and layout for all the pages in the app. -->
+
 {% load static %}
+{% load lang_switch %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +28,8 @@
                     </div>
                 </div>
                 <div class="language">
-                    <a href="/fr/main">FR</a>
-                    <a href="/en/main">EN</a>
+                    <a href="{% switch_lang 'fr' %}">FR</a>
+                    <a href="{% switch_lang 'en' %}">EN</a>
                 </div>
             </div>
         </div>
