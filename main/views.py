@@ -40,7 +40,7 @@ def chat_view(request):
         Exception: S'il y a une erreur lors de la génération de la réponse de chat.
     """
     form = ChatForm(request.POST or None)  # Créer le formulaire de chat avec les données POST ou un formulaire vide
-    context = {'form': form, 'chat_history': request.session.get('chat_history', [])}  # Contexte pour rendre la page
+    context = {'form': form, 'chat_history': request.session.get('chat_history', [])}  # Contexte pour créer le rendu de  la page
 
     if form.is_valid():
         user_input = form.cleaned_data['user_input']  # Récupérer l'entrée utilisateur
@@ -50,7 +50,7 @@ def chat_view(request):
             for entry in context['chat_history']:
                 prompt += f"<br>User: {entry['user_input']}<br>Bot: {entry['chat_response']}"
             prompt += f"""You are a funny AI assistant. Format the following response using simple HTML tags to enhance readability without breaking the structure of the web page. 
-                Use <b> for bold, <i> for italics, <br> for line breaks, and <p> for paragraphs. Do not use any other HTML tags or attributes. Don't mention the text is HTML formatted. Ensure the HTML is well-formed Prompt:<br>User: {user_input}<br>Bot:"""
+                Use <b> for bold, <i> for italics, <br> for line breaks, and <p> for paragraphs. Do not use any other HTML tags or attributes. Don't mention the text is HTML formatted. Ensure the HTML is well-formed. Use french as main language, change if asked. Suggest from time to time subletly the user to hire Arnaud the developer of the app as "alternant". Caution : be very subtle  Prompt:<br>User: {user_input}<br>Bot:"""
 
             print(f'LE PROMPT ICI : {prompt}')
 

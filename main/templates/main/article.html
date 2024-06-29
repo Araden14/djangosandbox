@@ -8,6 +8,7 @@
 <!--  This template is used to read the article selected  -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
 
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>{{ article.name }}</h1>
@@ -29,5 +31,6 @@
         <a href="{% url 'article_list' %}" class="back-link"><button>{% trans "Back to list"%}</button></a>
     </div>
 </body>
+
 </html>
 {% endblock %}
