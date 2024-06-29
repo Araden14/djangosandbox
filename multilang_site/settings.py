@@ -124,14 +124,14 @@ LANGUAGES = [
     ('en', 'English'),
     ('fr', 'French'),
 ]
-MEDIA_URL = 'main/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
-STATIC_URL = 'main/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'main/static/')
 
 # Default primary key field type
