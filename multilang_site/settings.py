@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-z*z@)l15e78#8)t%qmfe-6+r3=1qursfqpq0^w(!=-+a+3-1qx
 DEBUG = False
 
 ALLOWED_HOSTS = [
- 'chipper-donut-8f6827.netlify.app'
+ '127.0.0.1', 
+ '.vercel.app'
 ]
 
 # Application definition
@@ -73,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'multilang_site.wsgi.application'
+WSGI_APPLICATION = 'api.wsgi.app'
 
 
 # Database
