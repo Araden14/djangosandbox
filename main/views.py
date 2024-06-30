@@ -23,7 +23,8 @@ def article_list(request):
 def article(request, slug):
     # Récupérer un article spécifique basé sur le slug ou renvoyer une erreur 404 s'il n'existe pas
     article = get_object_or_404(Article, slug=slug)
-    # Rendre la page 'article.html' avec l'article
+    print(article.thumbnail.name)
+   # Rendre la page 'article.html' avec l'article
     return render(request, 'main/article.html', {'article': article})
 
 def chat_view(request):
@@ -80,6 +81,8 @@ def chat_view(request):
         logging.info("Le formulaire n'est pas valide")
 
     context['form'] = form  # Mettre à jour le formulaire dans le contexte
-
+   
+   
     # Rendre la page 'chat.html' avec le contexte mis à jour
     return render(request, 'main/chat.html', context)
+   

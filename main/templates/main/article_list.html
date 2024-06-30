@@ -17,7 +17,7 @@
             <a href="{% url 'article' article.slug %}">
                 <div class="article-item">
                     {% if article.thumbnail %}
-                        <img class="thumbnail" src="{{ article.thumbnail.url }}" alt="Thumbnail">
+                        <img class="thumbnail" src="https://araden14.github.io/resources/{{ article.thumbnail.name }}" alt="Thumbnail">
                     {% endif %}
                     <div class="content">
                         <h2>{{ article.name }}</h2>

@@ -25,7 +25,7 @@
             <p>By {{ article.author }} | Published on {{ article.publication_date|date:"F j, Y, g:i a" }}</p>
             <p>{% trans "Topic" %}: {{ article.topic }}</p>
         </div>
-        <img src="{{ article.thumbnail.url }}" alt="Article Thumbnail" class="thumbnailarticle">
+        <img src="https://araden14.github.io/resources/{{article.thumbnail.name }}" alt="Article Thumbnail" class="thumbnailarticle">
         <p class="abstract">{{ article.abstract }}</p>
         <p>{{ article.content }}</p>
         <a href="{% url 'article_list' %}" class="back-link"><button>{% trans "Back to list"%}</button></a>
