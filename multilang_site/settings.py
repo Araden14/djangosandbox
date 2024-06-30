@@ -28,7 +28,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
  '127.0.0.1', 
- '.vercel.app'
+ 'localhost'
+ 'django'
+ 'djangosandbox.onrender.com'
 ]
 
 # Application definition
@@ -74,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'api.wsgi.app'
+WSGI_APPLICATION = 'multilang_site.wsgi.application'
 
 
 # Database
