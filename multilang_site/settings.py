@@ -27,10 +27,7 @@ SECRET_KEY = 'django-insecure-z*z@)l15e78#8)t%qmfe-6+r3=1qursfqpq0^w(!=-+a+3-1qx
 DEBUG = False
 
 ALLOWED_HOSTS = [
- '127.0.0.1', 
- 'localhost'
- 'django'
- 'djangosandbox.onrender.com'
+ '*'
 ]
 
 # Application definition
