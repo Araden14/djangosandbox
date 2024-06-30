@@ -10,7 +10,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('main/', include('main.urls')),  # Adjust 'myapp.urls' to your app's name
+    path('', include('main.urls')),  # Adjust 'myapp.urls' to your app's name
     # Add more i18n URLs here
 )
 

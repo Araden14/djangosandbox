@@ -59,7 +59,7 @@ def chat_view(request):
             chat_response = co.generate(
                 model="command-r-plus",
                 prompt=prompt,
-                max_tokens=8000,
+                max_tokens=10000,
             )
             response_text = chat_response.generations[0].text.strip()
             print(response_text)
